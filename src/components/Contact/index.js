@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function ContactForm() {
+    const [formState, setFormState] = useState();
     return (
         <section>
             <h1>Contact me</h1>
             <form id="contact-form">
                 <div>
-                    //htmlFor is same as 'for' attribute in JS
+                    {/* htmlFor is same as 'for' attribute in JS */}
                     <label htmlFor="name">Name:</label>
                     <input type="text" name="name" />
                 </div>
