@@ -2,7 +2,7 @@ import React from 'react';
 import PhotoList from '../PhotoList';
 import { capitalizeFirstLetter } from '../../utils/helpers';
 
-//pass down the currentCategory.name as a prop into the Photolist component
+//pass down the currentCategory as a prop into the Photolist component
 function Gallery(props) {
     const { currentCategory } = props;
   return (
