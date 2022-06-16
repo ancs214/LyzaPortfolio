@@ -9,16 +9,21 @@ function ContactForm() {
 
 
     function handleChange(e) {
-        // The name property of target in the preceding expression actually refers to the name attribute of the form element. This attribute value matches the property names of formState (name, email, and message) and allows us to use [ ] to create dynamic property names.
+        // The name property of target in the preceding expression actually refers to the name attribute of the form element. This attribute value matches the property names of formState (name, email, and message) and allows us to use [ ] to create dynamic property names. See computed property names mdn.
         setFormState({...formState, [e.target.name]: e.target.value })
       }
       
-      console.log(formState);
+    //   console.log(formState);
       
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(formState);
+    }
+
     return (
         <section>
             <h1>Contact me</h1>
-            <form id="contact-form">
+            <form id="contact-form" onSubmit={handleSubmit}>
                 <div>
                     {/* htmlFor is same as 'for' attribute in JS */}
                     <label htmlFor="name">Name:</label>
