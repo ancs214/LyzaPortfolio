@@ -47,7 +47,7 @@ function ContactForm() {
 
     return (
         <section>
-            <h1>Contact me</h1>
+            <h1 data-testid='h1tag'>Contact Me</h1>
             <form id="contact-form" onSubmit={handleSubmit}>
                 <div>
                     {/* htmlFor is same as 'for' attribute in JS
@@ -69,7 +69,7 @@ function ContactForm() {
                     </div>
                 )}
                 {/* same as :   if(errorMessage){<div>.....</div>} */}
-                <button type="submit">Submit</button>
+                <button type="submit" data-testid='submitBtn'>Submit</button>
             </form>
         </section>
     )
