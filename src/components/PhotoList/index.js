@@ -3,14 +3,14 @@ import Modal from '../Modal';
 
 const PhotoList = ({ category }) => {
 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     // this allows us to pass in currentPhoto as a prop to Modal
     const [currentPhoto, setCurrentPhoto] = useState();
     const toggleModal = (image, i) => {
         setCurrentPhoto({...image, index: i});
-        setIsModalOpen(true);
+        setIsModalOpen(!isModalOpen);
     }
-
-    const [isModalOpen, setIsModalOpen] = useState(false);
 
     const [photos] = useState([
         {
@@ -117,7 +117,9 @@ const PhotoList = ({ category }) => {
 
     return (
         <div>
-            {isModalOpen && <Modal currentPhoto={currentPhoto} />}
+            {isModalOpen && (
+                <Modal currentPhoto={currentPhoto} onClose={toggleModal} />
+                )}
             <div className='flex-row'>
                 {/* image refers to element in photo array and "i" will render the image with the "require function" */}
                 {currentPhotos.map((image, i) => (

@@ -1,9 +1,9 @@
 import React from 'react';
 
 // below, we have destructured 'props' into currentPhoto, then destructured currentPhoto properties into constants to assign values into the  modal
-function Modal({currentPhoto}) {
+function Modal({onClose, currentPhoto}) {
     const {name, category, description, index} = currentPhoto;
-    
+
     return (
         <div className="modalBackdrop">
             <div className="modalContainer">
@@ -12,7 +12,7 @@ function Modal({currentPhoto}) {
                 <p>
                     Photo Description
                 </p>
-                <button type="button">
+                <button onClick={onClose} type="button">
                     Close this modal
                 </button>
             </div>
